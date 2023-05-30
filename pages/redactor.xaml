@@ -1,0 +1,70 @@
+﻿<Page x:Class="сайт_магазина_СП.pages.redactor"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:сайт_магазина_СП.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="redactor" IsVisibleChanged="Page_IsVisibleChanged">
+    <Grid> 
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+         
+
+                <Button x:Name="BtnSave" Grid.Row="13" Content="Сохранить" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120"
+                Click="BtnSave_Click" Grid.Column="1" Grid.ColumnSpan="2" FontSize="14"  Height="40" Background="#9acd32" Margin="10"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Фото товара" Margin="20 0"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="ID товара" Margin="20 0"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Наименование товара" Margin="20 0"/>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Тип товара" Margin="20 0"/>
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="Срок годности" Margin="20 0"/>
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="Состав" Margin="20 0"/>
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="Количество" Margin="20 0"/>
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="КЖБУ" Margin="20 0"/>
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="Страна производитель" Margin="20 0"/>
+                <TextBlock Grid.Row="9" Grid.Column="0" Text="Артикул" Margin="20 0"/>
+                <TextBlock Grid.Row="10" Grid.Column="0" Text="Фирма изготовитель" Margin="20 0"/>
+                <TextBlock Grid.Row="11" Grid.Column="0" Text="Вес" Margin="20 0" Height="30" VerticalAlignment="Top"/>
+                <TextBlock Grid.Row="12" Grid.Column="0" Text="Цена" Margin="20 0" Height="30" VerticalAlignment="Top"/>
+                <Image x:Name="PhotoProduct" Source="{Binding GetPhoto}" Grid.Row="0" Grid.Column="1" Margin="10 0 0 0"
+       VerticalAlignment="Stretch" HorizontalAlignment="Left" Width="50"/>
+                <Button x:Name="BtnLoad" Grid.Row="0" Grid.Column="0" Margin="100,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+Click="BtnLoad_Click" Content="Загрузить" FontSize="14"  Height="26" Width="90" Background="#9acd32" />
+                <TextBox x:Name="TextBoxID" Text="{Binding ID_товара}" Grid.Row="1" Grid.Column="1" Padding="0,2"/>
+                <TextBox x:Name="ProductName" Text="{Binding наименование}" Grid.Row="2" Grid.Column="1" Padding="0,2"/>
+                <ComboBox x:Name="Comboproduct_types" SelectedItem="{Binding product_types}" Grid.Row="3" Grid.Column="1" 
+                  DisplayMemberPath="название_типа_продукта" SelectedValuePath="ProductType" />
+                <TextBox x:Name="TextBoxdate" Text="{Binding срок_годности}" Grid.Row="4" Grid.Column="1" Padding="0,2"/>
+                <TextBox x:Name="TextBoxsostav" Text="{Binding состав}" Grid.Row="5" Grid.Column="1" Padding="0,2"/>
+                <TextBox x:Name="TextBoxcount" Text="{Binding количество}" Grid.Row="6" Grid.Column="1" Padding="0,2"/>
+                <TextBox x:Name="TextBoxkallori" Text="{Binding КЖБУ}" Grid.Row="7" Grid.Column="1" Padding="0,2"/>
+                <TextBox x:Name="TextBoxcountry" Text="{Binding страна_производства}" Grid.Row="8" Grid.Column="1" Padding="0,2"/>
+                <TextBox x:Name="TextBoxarticul" Text="{Binding артикул}" Grid.Row="9" Grid.Column="1" Padding="0,2"/>
+        <ComboBox x:Name="Combofirm" SelectedItem="{Binding info_company}" Grid.Row="10" Grid.Column="1" 
+                  DisplayMemberPath="название_фирмы" SelectedValuePath="FirmName" />
+
+                <TextBox x:Name="TextBoxves" Text="{Binding вес}" Grid.Row="11" Grid.Column="1" Padding="0,2"/>
+                <TextBox x:Name="TextBoxprice" Text="{Binding цена}" Grid.Row="12" Grid.Column="1" Padding="0,2"/>
+           
+    </Grid>
+</Page>

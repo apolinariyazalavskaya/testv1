@@ -1,0 +1,43 @@
+﻿<Page x:Class="сайт_магазина_СП.pages.avtorizaz"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:сайт_магазина_СП.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="avtorizaz">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" />
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" Text="Авторизация" FontWeight="DemiBold" ></TextBlock>
+        
+        <StackPanel Grid.Row="1" Orientation="Horizontal" >
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Text="Логин" FontSize="16" Margin="10"></TextBlock>
+            <TextBox Height="30" Width="100" Name="logintxb"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Text="Пароль" FontSize="16" Margin="10" />
+            <PasswordBox x:Name="passobox" Height="30" Width="100" Margin="10"/>
+        </StackPanel>
+        <StackPanel  Grid.Row="3" Orientation="Horizontal" Name="role" >
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Text="Выбор роли" FontSize="16" Margin="10" >
+                
+            </TextBlock>
+            <ComboBox Width="120" Height="30" HorizontalAlignment="Left" Name="comborol" SelectedItem="{Binding role}" DisplayMemberPath="name_role"  SelectedValuePath="ProductType" SelectionChanged="comborol_SelectionChanged">
+               
+            </ComboBox>
+           
+        </StackPanel>
+            <StackPanel Grid.Row="4" Orientation="Horizontal">
+            <Button x:Name="ok" Content="OK"   Click="ok_Click"  FontSize="14"   Height="40" Width="60" Background="#9acd32" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Page>
